@@ -1,25 +1,25 @@
 var expect = require('chai').expect;
-var string = "some string";
 var greet = require('./greet.js');
 
-describe('Access String', function() {
-  it('should return a string', function(done){
-    expect(string).to.be.a('string');
+describe('Greet module', function() {
+  it('should return a greeting', function(done) {
+    expect(greet.greet('Adam')).to.equal('Hello, Adam');
     done();
   });
-  it('should equal "some string"', function(done){
-    expect(string).to.equal('some string');
+  it('should be a function', function(done){
+    expect(greet.greet).to.be.a('function');
     done();
   });
 });
 
-describe('Greet module', function() {
-  it('should return a greeting', function(done) {
-    expect(greet.sayName('Adam')).to.equal('Hello, my name is Adam');
+//This is an attempt at the second bonus point:
+describe('Command line parameter', function() {
+  it('the parameter should be undefined - no argument given when test is completed', function(done) {
+    expect(greet.param).to.equal(undefined);
     done();
   });
-  it('should contain a method sayName', function(done){
-    expect(greet).to.have.ownProperty('sayName');
+  it('the parameter should be falsy', function(done) {
+    expect(greet.param).to.not.be.ok;
     done();
   });
 });
