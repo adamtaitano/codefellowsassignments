@@ -1,8 +1,12 @@
 // var exports = module.exports = {}; // use at the bottom instead
-module.exports.sayName = function(name){
-  return 'Hello, my name is ' + name; // use return instead of console.log for tests
+var greet = function(name){
+  return 'Hello, ' + name; // use return instead of console.log for tests
 };
 
-module.exports.doSomething = {
-  something: "We did something"
-};
+
+//This is an attempt at the first bonus point:
+var param = process.argv[2];
+console.log(greet(param));
+
+module.exports.greet = greet;
+module.exports.greet.param = param;
