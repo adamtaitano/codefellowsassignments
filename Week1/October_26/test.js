@@ -2,9 +2,6 @@ var expect = require('chai').expect;
 var exports = require('./greet.js');
 var child_process = require('child_process');
 
-
-
-
 describe('Greet module', function() {
   it('should return a greeting', function(done) {
     expect(exports.greet('Adam')).to.equal('Hello, Adam');
@@ -17,7 +14,6 @@ describe('Greet module', function() {
 });
 
 //This is an attempt at the second bonus point:
-//Command to run test is: mocha test.js --globals 'Adam'
 describe('Command line parameter', function() {
   it('the command line should return "Hello, Adam"', function(done) {
     expect(exports.greet(exports.param)).to.equal('Hello, Adam');
