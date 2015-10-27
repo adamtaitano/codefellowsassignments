@@ -1,9 +1,6 @@
 var expect = require('chai').expect;
 var exports = require('./greet.js');
 
-
-
-
 describe('Greet module', function() {
   'use strict';
   it('should return a greeting', function(done) {
