@@ -1,0 +1,25 @@
+{
+  "name": "bitmap",
+  "version": "1.0.0",
+  "description": "This is an attempt at making a bitmap transformer",
+  "main": "transformer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Taitano",
+  "license": "ISC",
+  "dependencies": {
+    "atob": "^1.1.2",
+    "base64-js": "0.0.8",
+    "chai": "^3.4.0",
+    "gulp": "^3.9.0",
+    "mocha": "^2.3.3"
+  },
+  "devDependencies": {
+    "bmp-js": "0.0.1",
+    "gulp-jshint": "^1.11.2",
+    "gulp-mocha": "^2.1.3",
+    "gulp-watch": "^4.3.5",
+    "jshint-stylish": "^2.0.1"
+  }
+}
