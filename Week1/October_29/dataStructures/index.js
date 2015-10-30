@@ -45,7 +45,7 @@ Implement.prototype.uniqueFilter = function unique (array) {
   return array;
 };
 
-//Version working with Jeff:
+//Unique version working with Jeff:
 Implement.prototype.unique = function (array) {
   var arr = [];
   var match;
@@ -60,6 +60,7 @@ Implement.prototype.unique = function (array) {
   return arr;
 };
 
+//Frequency method:
 Implement.prototype.frequency = function frequency (array) {
   if(array.length === 0) {
     return false;
@@ -102,6 +103,5 @@ Implement.prototype.frequency = function frequency (array) {
   }
   return findMax(obj);
 };
-
 
 module.exports = Implement;
