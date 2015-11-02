@@ -34,18 +34,18 @@ Implement.prototype.unshift = function(array, item) {
   return array.length;
 };
 
-//Working version of unique using filter
-Implement.prototype.uniqueFilter = function unique (array) {
-  array = array.filter(function(value, index, inputArray) {
-          console.log('value is ', value);
-          console.log('index is ', index);
-          console.log(inputArray.indexOf(value));
-          return inputArray.indexOf(value) == index;
-         });
-  return array;
-};
+// //Working version of unique using filter
+// Implement.prototype.uniqueFilter = function unique (array) {
+//   array = array.filter(function(value, index, inputArray) {
+//           console.log('value is ', value);
+//           console.log('index is ', index);
+//           console.log(inputArray.indexOf(value));
+//           return inputArray.indexOf(value) == index;
+//          });
+//   return array;
+// };
 
-//Unique version working with Jeff:
+//Unique version working without filter method (made with Jeff):
 Implement.prototype.unique = function (array) {
   var arr = [];
   var match;
@@ -61,16 +61,72 @@ Implement.prototype.unique = function (array) {
 };
 
 //Frequency method:
-Implement.prototype.frequency = function frequency (array) {
+// Implement.prototype.frequency = function frequency (array) {
+//   if(array.length === 0) {
+//     return false;
+//   }
+//   var obj = {};
+//   var chars = [];
+//   var split = array.map(function(arr){
+//     return arr.split('');
+//   });
+//   var characters = split.reduce(function(a, b) {
+//     return a.concat(b);
+//   });
+//   characters.forEach(function(string) {
+//     chars.push(string.toLowerCase());
+//   });
+//   chars.forEach(function(el){
+//     if(obj[el]) {
+//       obj[el]++;
+//     }
+//     else {
+//       obj[el] = 1;
+//     }
+//   });
+//   function findMax (obj) {
+//     var max = 0;
+//     var store = [];
+//     for(var keys in obj) {
+//       var object = {};
+//       object[keys] = obj[keys];
+//       if (obj[keys] > max) {
+//         max = obj[keys];
+//         store = [];
+//         store.push(object);
+//       }
+//       else if(obj[keys] == max) {
+//         store.push(object);
+//       }
+//     }
+//   return store;
+//   }
+//   return findMax(obj);
+// };
+
+//Frequency method re-implemented not including multiple letters per word
+Implement.prototype.frequencyUnique = function (array) {
   if(array.length === 0) {
     return false;
   }
   var obj = {};
   var chars = [];
-  var split = array.map(function(arr){
-    return arr.split('');
+  var split = array.map(function(element){
+    return element.split('');
   });
-  var characters = split.reduce(function(a, b) {
+var uniqueElements = [];
+var uniques = split.forEach(function(element, index, array) {
+      element = element.filter(function(value, index, inputArray) {
+              // console.log('value is ', value);
+              // console.log('index is ', index);
+              // console.log(inputArray.indexOf(value));
+              return inputArray.indexOf(value) == index;
+             });
+            //  console.log(element);
+      uniqueElements.push(element);
+    });
+// console.log(uniqueElements);
+  var characters = uniqueElements.reduce(function(a, b) {
     return a.concat(b);
   });
   characters.forEach(function(string) {
@@ -103,5 +159,4 @@ Implement.prototype.frequency = function frequency (array) {
   }
   return findMax(obj);
 };
-
 module.exports = Implement;
