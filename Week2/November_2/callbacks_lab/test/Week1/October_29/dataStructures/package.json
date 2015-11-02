@@ -1,0 +1,15 @@
+{
+  "name": "datastructures",
+  "version": "1.0.0",
+  "description": "This is the assignment for data structures and algorithms I",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Taitano",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3"
+  }
+}

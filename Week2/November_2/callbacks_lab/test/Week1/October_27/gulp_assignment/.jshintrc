@@ -1,0 +1,12 @@
+{
+ "globalstrict": false,
+ "quotmark": false,
+ "smarttabs": true,
+ "trailing": true,
+ "undef": false,
+ "curly": true,
+ "indent": 2,
+ "unused": true,
+ "node": true,
+ "globals" :   {}
+}
