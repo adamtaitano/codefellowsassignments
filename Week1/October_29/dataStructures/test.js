@@ -66,15 +66,15 @@ describe('Unique method', function() {
 describe('Frequency method', function(){
   it('should pass multiple cases', function(){
     var implement = new Implement();
-    var arr = ['the','red','fox', 'eats'];
-    var arr1 = ['the','red','fox','jumped','over','the','lazy','brown','dog'];
+    var arr = ['thee','redd','foxx', 'eatss'];
+    var arr1 = ['thee','red','fox','jumped','over','thee','lazy','brown','dog'];
     var arr2 = [];
     var arr3 = ['aaaaa','bbb'];
     var arr4 = ['aaaa','bbbb'];
-    expect(implement.frequency(arr)).to.deep.equal([{'e': 3}]);
-    expect(implement.frequency(arr1)).to.deep.equal([{'e': 5}]);
-    expect(implement.frequency(arr2)).to.not.be.ok;
-    expect(implement.frequency(arr3)).to.deep.equal([{'a': 5}]);
-    expect(implement.frequency(arr4)).to.deep.equal([{'a': 4}, {'b' :4}]);
+    expect(implement.frequencyUnique(arr)).to.deep.equal([{'e': 3}]);
+    expect(implement.frequencyUnique(arr1)).to.deep.equal([{'e': 5}]);
+    expect(implement.frequencyUnique(arr2)).to.not.be.ok;
+    expect(implement.frequencyUnique(arr3)).to.deep.equal([{'a': 1}, {'b': 1}]);
+    expect(implement.frequencyUnique(arr4)).to.deep.equal([{'a': 1}, {'b' :1}]);
   });
 });
