@@ -57,18 +57,18 @@ describe('Transform - invertColors', function() {
   });
 });
 
-describe('Transform - rgb', function() {
-  it('should transform the picture according to the settings', function(done) {
-    var instance = new Transformed();
-    var buffer = instance.openFile('bitmaps/crayons.bmp');
-    var parsed = instance.bufferToJSON(buffer);
-    var transformedData = instance.rbg('green', 2, parsed);
-    expect(instance.transformedData).to.be.an('object');
-    var transformedBuffer = instance.jsonToBuffer(transformedData);
-    instance.writeFile(transformedBuffer);
-    done();
-  });
-});
+// describe('Transform - rgb', function() {
+//   it('should transform the picture according to the settings', function(done) {
+//     var instance = new Transformed();
+//     var buffer = instance.openFile('bitmaps/crayons.bmp');
+//     var parsed = instance.bufferToJSON(buffer);
+//     var transformedData = instance.rbg('green', 2, parsed);
+//     expect(instance.transformedData).to.be.an('object');
+//     var transformedBuffer = instance.jsonToBuffer(transformedData);
+//     instance.writeFile(transformedBuffer);
+//     done();
+//   });
+// });
 
 describe('JSON to buffer', function() {
     it('should return a buffer', function(done) {
@@ -84,9 +84,9 @@ describe('JSON to buffer', function() {
 describe('Write file', function() {
   it('should write a file to disk', function(done) {
     var instance = new Transformed();
-    var buffer = instance.openFile('bitmaps/crayons.bmp');
+    var buffer = instance.openFile('bitmaps/newImage.bmp');
     var parsed = instance.bufferToJSON(buffer);
-    var transformedData = instance.grayScale(parsed);
+    var transformedData = instance.invertColors(parsed);
     var transformedBuffer = instance.jsonToBuffer(transformedData);
     instance.writeFile(transformedBuffer);
     expect('newImage.bmp').to.be.ok;
