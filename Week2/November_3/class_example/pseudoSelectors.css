@@ -1,0 +1,14 @@
+span:first-child{
+  color:red
+}
+
+span:last-child{
+  color:red
+}
+
+span:after{
+  [content:'v',]
+  font-family:icon-font;
+  width:20px;
+  weight:20px;
+}
