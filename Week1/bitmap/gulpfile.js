@@ -3,6 +3,7 @@ var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 var stylish = require('jshint-stylish');
 var watch = require('gulp-watch');
+var jscs = require('gulp-jscs');
 
 gulp.task('lint', function() {
   'use strict';
@@ -17,11 +18,17 @@ gulp.task('mocha', function() {
     .pipe(mocha({reporter: 'nyan'}));
 });
 
+gulp.task('jscs', function() {
+    return gulp.src('./*.js')
+        .pipe(jscs())
+        .pipe(jscs.reporter());
+});
+
 gulp.task('watch', function() {
   'use strict';
   watch('./*.js', function () {
-    gulp.start(['lint', 'mocha']);
+    gulp.start(['lint', 'mocha', 'jscs']);
   });
 });
 
-gulp.task('default', ['lint', 'mocha', 'watch']);
+gulp.task('default', ['lint', 'jscs', 'mocha']);

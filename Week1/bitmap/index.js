@@ -1,19 +1,22 @@
 var events = require('events');
-var eventEmitter = new events.EventEmitter();
 var fs = require('fs');
 
 var Transformed = function() {
 //Saved buffer:
 var buffer;
+//Saved parsed off-set buffer and header
+var parsed;
+var header;
+//Saved transformed data;
+var transformedData;
+//Saved transformedBuffer:
+var transformedBuffer;
   this.openFile = function(filePath) {
     console.log('Opening file at filepath: ' + filePath);
     var bitmap = fs.readFileSync(filePath);
     this.buffer = new Buffer(bitmap);
     return this.buffer;
   };
-//Saved parsed off-set buffer and header
-var parsed;
-var header;
   this.bufferToJSON = function(buffer) {
     console.log('Saving header of buffer, and converting offset to pixel array JSON as "parsed"');
     var le = buffer.readUIntLE(10,4);
@@ -25,8 +28,6 @@ var header;
     this.header = header;
     return parsed;
   };
-//Saved transformed data;
-var transformedData;
   this.invertColors = function(parsed) {
     for (var i = 0; i < parsed.data.length; i ++) {
       parsed.data[i] = 255-parsed.data[i];
@@ -77,8 +78,6 @@ var transformedData;
     this.transformedData = parsed;
     return this.transformedData;
   };
-//Saved transformedBuffer:
-var transformedBuffer;
   this.jsonToBuffer = function(transformedData) {
     var string = JSON.stringify(transformedData);
     var copy = JSON.parse(string, function(key, value) {
@@ -95,7 +94,4 @@ var transformedBuffer;
   };
 };
 
-// var instance = new Transformed();
-// var buffer = instance.openFile('bitmaps/crayons.bmp');
-// // console.log(buffer);
 module.exports = Transformed;
