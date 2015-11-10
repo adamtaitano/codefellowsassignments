@@ -1,17 +1,15 @@
 /* As hex codes */
-
-.color-secondary  { background-color: #614D80 }	/* Main Primary color */
-.color-primary    { background-color: #8F879B } /* Secondary Color */
-.color-tertiary    { background-color: #625970 } /* Tertiary Color */
-.color-quarternary { background-color: #5B3793 } /* Quarternary Color */
-.color-quinary     { background-color: #3C1C6F } /* Quinary Color */
+.color-primary    { background-color: #8F879B } /* Main Primary color - light purple */
+.color-secondary  { background-color: #614D80 }	/* Secondary Color - purple */
+.color-tertiary    { background-color: #625970 } /* Tertiary Color - gray */
+.color-quarternary { background-color: #5B3793 } /* Quarternary Color - dark purple */
+.color-quinary     { background-color: #3C1C6F } /* Quinary Color - darkest purple */
 
 
 
 /* As RGBa codes */
-
-.rgba-primary-0 { color: rgba( 97, 77,128,1) }	/* Main Primary color */
-.rgba-primary-1 { color: rgba(143,135,155,1) }
+.rgba-primary-0 { color: rgba(143,135,155,1) }
+.rgba-primary-1 { color: rgba( 97, 77,128,1) }
 .rgba-primary-2 { color: rgba( 98, 89,112,1) }
 .rgba-primary-3 { color: rgba( 91, 55,147,1) }
 .rgba-primary-4 { color: rgba( 60, 28,111,1) }
